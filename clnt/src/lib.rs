@@ -1,7 +1,7 @@
 mod join;
 mod prediction;
 mod runner;
-mod view;
+//mod view;
 mod webrtc;
 
 use std::{cell::RefCell, collections::HashSet, rc::Rc};
@@ -14,37 +14,14 @@ use wasm_bindgen::{
 use instant::Instant;
 use log::info;
 
-use quicksilver::{
-    geom::Vector,
-    graphics::{Color, Graphics},
-    input::{Event, Input, Key},
-    Settings, Window,
-};
-
 use comn::util::stats;
 
 use crate::view::View;
-
-const SCREEN_SIZE: Vector = Vector {
-    x: 1280.0,
-    y: 720.0,
-};
 
 #[wasm_bindgen(start)]
 pub fn main() {
     #[cfg(feature = "console_error_panic_hook")]
     console_error_panic_hook::set_once();
-
-    quicksilver::run(
-        Settings {
-            size: SCREEN_SIZE,
-            title: "Play Catcheb",
-            resizable: true,
-            log_level: log::Level::Debug,
-            ..Settings::default()
-        },
-        app,
-    );
 }
 
 pub fn current_input(pressed_keys: &HashSet<Key>) -> comn::Input {

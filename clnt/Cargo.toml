@@ -30,6 +30,7 @@ pareen = { git = "https://github.com/leod/pareen.git", branch = "anim_with_dur",
 coarse-prof = { git = "https://github.com/leod/coarse-prof.git" }
 
 comn = { path = "../comn" }
+webglee = { path = "../webglee" }
 
 # The `console_error_panic_hook` crate provides better debugging of panics by
 # logging them with `console.error`. This is great for development, but requires
